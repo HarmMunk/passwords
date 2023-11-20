@@ -1,7 +1,5 @@
 package passwords
 
-const ()
-
 var (
 	MonoGrams = [...]string{
 		"a1b1c1d1",

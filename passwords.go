@@ -19,13 +19,6 @@ type GeneratorParams struct {
 
 var password = ""
 
-func max(a, b int) int {
-	if a > b {
-		return a
-	} else {
-		return b
-	}
-}
 func (gp GeneratorParams) PickNGram(nGram string) (next byte) {
 	//if gp.NGramCnt[nGram] == 0 {
 	//	fmt.Println("Why did this happen?", nGram)
@@ -40,7 +33,7 @@ func (gp GeneratorParams) PickNGram(nGram string) (next byte) {
 		rnd := gp.Randomiser(gp.NGramCnt[nGram])
 		fmt.Println("PickNGram 1: rnd=", rnd, ", NGramCnt[", nGram, "]=", gp.NGramCnt[nGram])
 		next = 'a'
-		var accu int = gp.NGramFreq[nGram+string(next)]
+		var accu = gp.NGramFreq[nGram+string(next)]
 		fmt.Println("PickNGram 2: accu=", accu)
 		for ; next <= 'z'; next++ {
 			accu += gp.NGramFreq[nGram+string(next)]
